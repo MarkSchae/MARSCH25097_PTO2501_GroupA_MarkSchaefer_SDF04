@@ -7,17 +7,57 @@
     padding: 0;
 }
 
+:root {
+    font-size: 16px;
+}
 
 /* Style the body/html if needed */
 /* Position the footer to always be at the bottom of the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 
+main {
+    flex: 1;
+}
 
 /* Grid layout for the footer */
-.footer-grid-container {
+.footer-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(1, minmax(auto, 1fr));
+    /* Setting the column max to auto allows for the columns to grow/shrink based on the content and thus keeping the spacing look visually more consistent */
+    grid-template-columns: repeat(3, minmax(200px, auto));
+    grid-template-rows: repeat(1, minmax(auto, auto));
+    background-color: #659f8f;
+    padding: 5rem;
+    gap: 5rem;
+    width: 100%;
+}
 
+/* Specific alignment using a wrapper for the grid */
+.footer-grid-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #659f8f;
+}
+
+/* Align the content of the divs and the nested elements */
+.footer-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.footer-grid > div nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 /* Alignment of Subscribe section -  */
@@ -30,3 +70,10 @@
 
 
 /* Styling of the Nav hrefs */
+a {
+    color: inherit;           
+    text-decoration: none;    
+    font-size: inherit;       
+    font-family: inherit;     
+    font-weight: inherit; 
+}
