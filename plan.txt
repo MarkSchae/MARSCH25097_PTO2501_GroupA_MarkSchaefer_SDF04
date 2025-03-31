@@ -1,0 +1,6 @@
+Set up the boiler-plate html 
+
+Set up a rough outline of the css
+
+Research some well designed webpages and inspect the footer section
+

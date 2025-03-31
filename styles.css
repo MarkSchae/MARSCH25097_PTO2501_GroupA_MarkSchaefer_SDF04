@@ -1,0 +1,32 @@
+/* Reset default margins, padding, and box-sizing to ensure consistent layout across browsers (includes borders, padding, etc in the width calculations) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Style the body/html if needed */
+/* Position the footer to always be at the bottom of the page */
+
+
+/* Grid layout for the footer */
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(1, minmax(auto, 1fr));
+
+}
+
+/* Alignment of Subscribe section -  */
+
+
+/* Alignment of Links section */
+
+
+/* Alignment of Tech section */
+
+
+/* Styling of the Nav hrefs */
