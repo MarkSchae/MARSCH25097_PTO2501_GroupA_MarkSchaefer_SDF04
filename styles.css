@@ -104,16 +104,8 @@ form button {
     left: 5rem;
     bottom: -5rem;
 }
-/* Alignment of Subscribe section -  */
 
-
-/* Alignment of Links section */
-
-
-/* Alignment of Tech section */
-
-
-/* Styling of the Nav hrefs */
+/*Styling the a tags to be the correct size and look */
 a {
     color: inherit;           
     text-decoration: none;    
@@ -121,4 +113,63 @@ a {
     font-family: inherit;     
     font-weight: inherit; 
     align-self: flex-start;
+}
+
+/* Media querry for responsiveness for i pad */
+@media (max-width:768px) and (min-width:376px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(200px, auto));
+        grid-template-rows: repeat(2, minmax(20px, auto));
+        gap: 5rem;
+    }
+    .signup-form-container {
+        grid-column: 1 / -1;
+        padding: 0;
+    }
+    .quick-links-container {
+        padding: 0;
+    }
+    .footer-grid-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Media querry for responsiveness for i phone */
+@media (max-width:376px) {
+    .footer-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+        padding: 0;
+    }
+    .quick-links-container {
+        padding: 0;
+        margin-top: 2rem;
+    }
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+    }
+    form button {
+        flex: 1;
+    }
+    .signup-form-container {
+        padding: 0;
+    }
+    .footer-grid::after {
+        left: 0;
+    }
+    .footer-grid::before {
+        left: 0;
+    }
+    .technologies-container {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+    .footer-grid-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
