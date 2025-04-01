@@ -4,3 +4,12 @@ Set up a rough outline of the css
 
 Research some well designed webpages and inspect the footer section
 
+Style button and input for the form 
+
+Create bottom title and deviding line pseudo elements at the bottom of the footer 
+
+Write media querries for i pad and i phone 
+
+Try to perfect the layout and responsiveness in line with the png 
+
+Double check the challenge brief 
