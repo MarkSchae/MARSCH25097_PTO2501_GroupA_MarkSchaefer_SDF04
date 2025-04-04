@@ -96,13 +96,25 @@ form button {
 
 /* Pseudo element CodeSpace after the end line */
 .footer-grid::before {
-    content: "CODESPACE";
+    content: "CODESP/_CE";
     font-size: 2rem;
     display: block;
     position: absolute;
     bottom: 0;
     left: 5rem;
     bottom: -5rem;
+    background: linear-gradient(to right, 
+    white 0%, white 65%,   /* White for 'CODESP' */
+    orange 70%, orange 70%, /* Orange for '/_' */
+    white 85%, white 100%   /* White for 'CE' */
+    );
+    /* Shadow effect for elevation experiment */
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.3), /* Soft shadow for depth */
+        -1px -1px 2px rgba(255, 255, 255, 0.4); /* Light top-left glow */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 /*Styling the a tags to be the correct size and look */
