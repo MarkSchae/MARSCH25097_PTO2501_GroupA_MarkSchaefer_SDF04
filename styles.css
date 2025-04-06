@@ -81,6 +81,14 @@ form button {
     margin: 0.5rem;
 }
 
+/* 3D pop-out effect on hover */
+form input:hover {
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 
+    4px 4px 10px rgba(0, 0, 0, 0.3),
+    -2px -2px 5px rgba(255, 255, 255, 0.6);
+}
+
 form button {
     background-color: #d66c46;
     color: white;
@@ -96,6 +104,20 @@ form button {
     position: absolute;
     bottom: 0;
     left: 5rem;
+}
+
+.footer-grid:hover::after {
+    animation: movement 1s 1 ease-in-out;
+}
+
+/* Squash the line to nothing and back */
+@keyframes movement {
+    0%, 100% {
+        transform: scaleX(1); 
+    }
+    50% {
+        transform: scaleX(0);
+    }
 }
 
 /* Pseudo element CodeSpace after the end line */
@@ -131,12 +153,50 @@ a {
     align-self: flex-start;
 }
 
+a:hover, a:focus {
+    color: aliceblue;
+}
+
+.btn-submit:hover::after {
+    content: "🎁";
+    font-size: 2rem;
+    position: absolute;
+    top: 80px; /* Research a more responsive way to do this */
+    left: 300px;
+    animation: shake 0.1s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(-1px, -1px); }
+}
+
+.btn-submit:active::after {
+    content: "🎉";
+    font-size: 2rem;
+    position: absolute;
+    top: 100px;
+    left: 270px;
+    animation: celebrate 1s ease-in-out 0s 1 normal forwards;
+    opacity: 0;
+}
+
+@keyframes celebrate {
+    0% { transform: scale(0.5) translateY(0); opacity: 0; }
+    50% { transform: scale(1.2) translateY(-20px); opacity: 1; }
+    100% { transform: scale(1) translateY(-40px); opacity: 0; }
+}
+
 /* Media querry for responsiveness for i pad */
 @media (max-width:768px) and (min-width:376px) {
     .footer-grid {
         grid-template-columns: repeat(2, minmax(200px, auto));
         grid-template-rows: repeat(2, minmax(20px, auto));
         gap: 5rem;
+        font-size: 1.3rem;
     }
     .signup-form-container {
         grid-column: 1 / -1;
@@ -148,6 +208,7 @@ a {
     .footer-grid-container {
         margin-left: auto;
         margin-right: auto;
+        flex: 1.5;
     }
 }
 
